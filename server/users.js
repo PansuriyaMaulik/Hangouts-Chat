@@ -2,8 +2,8 @@ const users = [];
 
 const addUser = ({ id, name, room}) => {
     //name and room --- Jay Patel then Write --- JayPatel
-    name = name.trim().tolowerCase();
-    room = room.trim().tolowerCase();
+    name = name.trim().toLowerCase();
+    room = room.trim().toLowerCase();
 
     //Check for the existing user 
     const existingUser = users.find((user) => user.room === room && user.name === name);
@@ -25,7 +25,7 @@ const removeUser = (id) => {
     }
 }
 
-const getUsers = (id) => {
+const getUser = (id) => {
     users.find((user) => user.id === id);
 }
 
@@ -33,4 +33,4 @@ const getUsersInRoom = (room) => {
     users.filter((user) => user.room === room);
 }
 
-module.exports = { addUser, removeUser, getUsers, getUsersInRoom};
+module.exports = { addUser, removeUser, getUser, getUsersInRoom};
